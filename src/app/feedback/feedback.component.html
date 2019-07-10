@@ -11,7 +11,7 @@
     <div id="divider"></div>
     <div class="feedback-form">
 
-        <form class="example-form">
+        <form class="example-form" (action)="submit()">
             <mat-form-field class="example-full-width">
                 <input matInput placeholder="Name" [(ngModel)]="name" name="firstname">
             </mat-form-field>
@@ -39,7 +39,7 @@
                     value="Refresh">
             </fieldset>
             <div class="action">
-                <button mat-raised-button style="background-color: #ffa000;color:white">
+                <button mat-raised-button style="background-color: #ffa000;color:white" (click)="submit()">
                     Submit
                 </button>
                 <button mat-raised-button color="warn">

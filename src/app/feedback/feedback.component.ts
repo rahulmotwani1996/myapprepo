@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { DataServiceService } from '../data-service.service';
+import { FeedbackItem } from '../feedback-item';
+import { Observable } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-feedback',
@@ -67,7 +72,10 @@ export class FeedbackComponent implements OnInit {
 
     { name: "Overall", value: 0 }
   ]
-  constructor() { }
+
+  constructor(private http: HttpClient) {
+
+  }
 
 
   ngOnInit() {
@@ -83,6 +91,31 @@ export class FeedbackComponent implements OnInit {
     this.categories[index].value = event;
     sessionStorage.setItem('data', JSON.stringify(this.categories));
   }
+  submit() {
+    var feedback = {
+      username: this.name,
+      ratings: {
+        food: this.categories[0].value,
+        Cleanliness: this.categories[1].value,
+        Service: this.categories[2].value,
+        Atmosphere: this.categories[3].value,
+        ValueForMoney: this.categories[4].value,
+        Overall: this.categories[5].value,
 
+      },
+      suggestion: this.comment
+    }
+    var feedback1 = JSON.stringify(feedback);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+
+      })
+    };
+    this.http.post<Observable<string>>("http://localhost:9000", feedback1, httpOptions).subscribe(res => {
+      alert("Some response");
+    })
+  }
 
 }

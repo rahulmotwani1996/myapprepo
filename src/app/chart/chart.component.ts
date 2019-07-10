@@ -18,16 +18,17 @@ export class ChartComponent implements OnInit {
       animationEnabled: true,
       exportEnabled: true,
       title: {
-        text: "Basic Column Chart in Angular"
+        text: "Feedback Data"
       },
       data: [{
         type: "column",
         dataPoints: [
-          { y: 4, label: "Apple" },
-          { y: 4.5, label: "Mango" },
-          { y: 3, label: "Orange" },
-          { y: 4.2, label: "Banana" },
-          { y: 3, label: "Pineapple" },
+          { y: 4, label: "Food Quality" },
+          { y: 4.5, label: "Service" },
+          { y: 3, label: "Atmosphere" },
+          { y: 4.2, label: "Cleanliness" },
+          { y: 3, label: "Value for money" },
+          { y: 3, label: "Overall" }
 
         ]
       }]

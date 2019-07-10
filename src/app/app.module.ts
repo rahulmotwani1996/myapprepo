@@ -17,6 +17,7 @@ import { ChartComponent } from './chart/chart.component';
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FeedbackItemComponent } from './feedback-item/feedback-item.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FeedbackItemComponent } from './feedback-item/feedback-item.component';
     AdminComponent,
     ChartComponent,
     FeedbackListComponent,
-    FeedbackItemComponent
+    FeedbackItemComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
