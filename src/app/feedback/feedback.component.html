@@ -1,0 +1,53 @@
+<div class="main-container">
+
+    <div class="note">
+        <p>
+            We Welcome Your Comments
+            Thank you for giving us an opportunity to be your host in London. We hope you enjoyed your stay with us.
+            Please spare a few moments to complete this Guest Satisfaction form which will help us to improve our
+            service
+        </p>
+    </div>
+    <div id="divider"></div>
+    <div class="feedback-form">
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Name" [(ngModel)]="name" name="firstname">
+            </mat-form-field>
+
+
+            <ul class="cat-list">
+                <li class="category-item" *ngFor="let cat of categories">
+                    <app-feedback-category [category]="cat"
+                        (valueChange)="handleValueChange(categories.indexOf(cat),$event)"></app-feedback-category>
+                </li>
+            </ul>
+            <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Leave a comment" [(ngModel)]="comment" name="comment"></textarea>
+            </mat-form-field>
+            <fieldset>
+                <legend>Captcha</legend>
+
+                <div id="captcha" style="display:block-inline">
+                </div>
+
+                <input type="text" placeholder="Type Here..." id="captchaTextBox" />
+
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" style="width:100px" class="btn btn-primary" onclick="createCaptcha()"
+                    value="Refresh">
+            </fieldset>
+            <div class="action">
+                <button mat-raised-button style="background-color: #ffa000;color:white">
+                    Submit
+                </button>
+                <button mat-raised-button color="warn">
+                    Skip
+                </button>
+            </div>
+
+
+        </form>
+    </div>
+</div>

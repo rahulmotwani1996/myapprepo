@@ -1,0 +1,19 @@
+<div class="main-container">
+
+    <div class="category-name">
+        {{category.name}}
+    </div>
+
+    <div>
+        <star-rating [hoverEnabled]="true" [starType]="'svg'" size="large" [rating]="category.value"
+            (ratingChange)="onRatingChange($event)"></star-rating>
+
+    </div>
+
+
+
+
+
+
+
+</div>
